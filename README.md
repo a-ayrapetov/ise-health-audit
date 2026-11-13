@@ -4,6 +4,21 @@
 
 Read-only health and certificate-expiry audit for Cisco ISE. One command tells you which nodes are down, whether admin HA exists, and which system and trusted certificates are expired or about to expire, before an expired EAP or admin certificate takes authentication down.
 
+## When to run it
+
+```mermaid
+flowchart LR
+  R([Change window<br/>ahead]) --> T[Run ise-audit] --> D1{DP 1}
+  D1 -->|clean| G([Go])
+  D1 -->|warning| W[Renew certificates or<br/>add admin HA within 60 days] --> G
+  D1 -->|critical| H([Hold the change:<br/>fix node or certificate first])
+
+  style R fill:#1f6feb,color:#fff,stroke:none
+  style D1 fill:#6e40c9,color:#fff,stroke:none
+  style G fill:#1a7f37,color:#fff,stroke:none
+  style H fill:#cf222e,color:#fff,stroke:none
+```
+
 ## What it checks
 
 | Check | Severity |
