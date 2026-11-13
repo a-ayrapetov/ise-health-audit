@@ -1,6 +1,6 @@
 # ise-health-audit
 
-[![ci](https://github.com/a-ayrapetov/ise-health-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/ise-health-audit/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/ise-health-audit)](https://pypi.org/project/ise-health-audit/)
+[![ci](https://github.com/a-ayrapetov/ise-health-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/ise-health-audit/actions/workflows/ci.yml)
 
 Read-only health and certificate-expiry audit for Cisco ISE. One command tells you which nodes are down, whether admin HA exists, and which system and trusted certificates are expired or about to expire, before an expired EAP or admin certificate takes authentication down.
 
@@ -34,7 +34,7 @@ Nothing is created, changed or deleted. Credentials come from `ISE_USERNAME` / `
 
 - Cisco ISE with OpenAPI enabled (Administration > System > Settings > API Settings > API Service Settings). It is off by default.
 - An admin account with read access to the OpenAPI. Use a dedicated read-only account rather than a full admin.
-- Python 3.9+. Install with `pip install ise-health-audit` (provides the `ise-audit` command), or `pip install -r requirements.txt` from a clone.
+- Python 3.9+. Install with `pip install git+https://github.com/a-ayrapetov/ise-health-audit` (provides the `ise-audit` command), or `pip install -r requirements.txt` from a clone.
 
 ## Usage
 
